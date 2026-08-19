@@ -28,4 +28,4 @@ The main goal of Blood Bridge is to simplify the process of finding blood donors
 
 ## Developer
 
-**Role:** Full Stack Developer
+**Role:** Full Stack Web Developer
