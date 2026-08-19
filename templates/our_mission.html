@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our Mission Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg pt-0 pb-0 fixed-top bg-white">
+  <div class="container-fluid">
+    <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="logo" style="width: 180px; height: 60px; margin-top: 8px; padding-bottom: 8px; margin-left: 40px;">
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active fs-6 text-body-emphasis me-2" href="{{ url_for('home') }}">Home</a>  
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active fs-6 text-body-emphasis me-2" href="{{ url_for('about') }}">About Us</a>
+  </li>
+  <li class="nav-item">
+    <p><a class="nav-link active  fs-6 border-2 border-bottom border-danger me-2 pb-0 text-danger" aria-current="page" href="our_mission.html">Our Mission</a></p>  
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-body-emphasis fs-6 me-2" href="{{ url_for('find_donor') }}">Find Donor</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-body-emphasis fs-6 me-2" href="{{ url_for('request_blood') }}">Request Blood</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-body-emphasis fs-6 me-2" href="{{ url_for('donor') }}">Become Donor</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-body-emphasis fs-6 me-2" href="{{ url_for('contact') }}">Contact Us</a>
+  </li>
+</ul>
+  </div>
+</nav>
+<div class="position-relative" style="padding-top: 68px;">
+    <img src="{{ url_for('static', filename='Images/Mission.png') }}" class="img-fluid w-100" style="height:110vh;">
+
+    <div class="position-absolute top-50 translate-middle-y text-start text-danger" style="margin-left: 50px;">
+        <div class="d-flex">
+          <h1 class="display-4 fw-bold text-black">Our</h1>
+          <h1 class="display-4 fw-bold text-danger ms-3">Mission</h1>
+        </div>
+        <p class="text-black fs-5" style="margin-left: 2px; max-width: 650px; text-align: justify;" >Our mission is to make blood donation
+            simple, fast, and accessible for everyone. We connect voluntary blood donors with patients in need through a secure and trusted 
+            platform, ensuring timely assistance during emergencies. By bringing donors and recipients together, we strive to save lives and 
+            build a healthier, more caring community.</p>
+    </div>
+</div>
+<div class="d-flex mt-4 justify-content-center">
+          <h3 class="fw-bold text-black ms-5">Why Our </h3>
+          <h3 class="fw-bold text-danger ms-2">Mission Matters ?</h3>
+</div>
+<div class="d-flex justify-content-center ms-5 me-5 mt-4">
+    <div class="border-end border-3 border-danger-subtle" style="padding-right: 120px; margin-right: 120px;">
+        <div class="text-center mt-2"><img src="{{ url_for('static', filename='Images/Mission1.png') }}" class="img-fluid rounded-circle text-center" style="height: 80px; width: 80px;" alt="..."></div>
+        <h5 class="text-danger text-center fw-bold">Every Second Counts</h5>
+        <p class="text-center card-text fs-6" style="width: 300px;">Every second matters during a medical emergency. Finding the right blood donor quickly can help save a life.</p>
+    </div>
+    <div class="border-end border-3 border-danger-subtle" style="margin-right: 120px; padding-right: 120px;">
+        <div class="text-center mt-2"><img src="{{ url_for('static', filename='Images/Mission2.png') }}" class="img-fluid rounded-circle text-center" style="height: 80px; width: 80px;" alt="..."></div>
+        <h5 class="text-danger text-center fw-bold">Bridging the Gap</h5>
+        <p class="text-center card-text fs-6" style="width: 300px;">We bridge the gap between blood donors and patients by making it easier to connect when every moment matters.</p>
+    </div>
+    <div>
+        <div class="text-center mt-2"><img src="{{ url_for('static', filename='Images/Mission3.png') }}" class="img-fluid rounded-circle text-center" style="height: 80px; width: 80px;" alt="..."></div>
+        <h5 class="text-danger text-center fw-bold">Power of Kindness</h5>
+        <p class="text-center card-text fs-6" style="width: 300px;">Your kindness can make a life-changing difference. One donation has the power to bring hope to many.</p>
+    </div>
+</div>
+<div class="mt-4" style="background-color: rgb(248, 238, 238); height: 60vh;">
+  <div class="d-flex pt-4 justify-content-center">
+          <h3 class="fw-bold text-black ms-5">How We</h3>
+          <h3 class="fw-bold text-danger ms-2">Achieve Our Mission ?</h3>
+</div>
+<div class="position-relative mt-4" style="margin-left: 192px; margin-right: 192px;">
+    <div class="progress" style="height:2px;">
+        <div class="progress-bar bg-danger" style="width:100%;"></div>
+    </div>
+
+    <button type="button" class="position-absolute top-0 translate-middle btn btn-danger rounded-pill fw-bold pt-0" style="left:0%; width:2rem; height:2rem; font-size: 20px; padding-left: 10px;">
+        1</button>
+    <button type="button" class="position-absolute top-0 translate-middle btn btn-danger rounded-pill fw-bold pt-0" style="left:33.33%; width:2rem; height:2rem; font-size: 20px; padding-left: 10px;">
+        2</button>
+    <button type="button" class="position-absolute top-0 translate-middle btn btn-danger rounded-pill fw-bold pt-0" style="left:66.66%; width:2rem; height:2rem; font-size: 20px; padding-left: 10px;">
+        3</button>
+    <button type="button" class="position-absolute top-0 translate-middle btn btn-danger rounded-pill fw-bold pt-0" style="left:100%; width:2rem; height:2rem; font-size: 20px; padding-left: 10px;">
+        4</button>
+</div>
+<div class="d-flex justify-content-between mt-4 ms-5 me-5">
+  <div class="card shadow" style="width: 18rem;">
+  <div class="text-center mt-2"><img src="{{ url_for('static', filename='Images/Mission4.png') }}" class="img-fluid rounded-circle text-center" style="height: 80px; width: 80px;" alt="..."></div>
+  <div class="card-body">
+    <h5 class="card-title fw-bold text-center">Register</h5>
+    <p class="card-text text-center">Register on our platform and create your donor profile to connect with patients in need.</p>
+  </div>
+</div>
+<div class="card shadow" style="width: 18rem;">
+  <div class="text-center mt-2"><img src="{{ url_for('static', filename='Images/Mission5.png') }}" class="img-fluid rounded-circle text-center" style="height: 80px; width: 80px;" alt="..."></div>
+  <div class="card-body">
+    <h5 class="card-title fw-bold text-center">Search</h5>
+    <p class="card-text text-center">Patients can quickly search for verified and nearby blood donors by blood group and location.</p>
+  </div>
+</div>
+<div class="card shadow" style="width: 18rem;">
+  <div class="text-center mt-2"><img src="{{ url_for('static', filename='Images/Mission6.png') }}" class="img-fluid rounded-circle text-center" style="height: 80px; width: 80px;" alt="..."></div>
+  <div class="card-body">
+    <h5 class="card-title fw-bold text-center">Connect</h5>
+    <p class="card-text text-center">Patients easily connect with registered blood donors for timely blood donation.</p>
+  </div>
+</div>
+<div class="card shadow" style="width: 18rem;">
+  <div class="text-center mt-2"><img src="{{ url_for('static', filename='Images/Mission7.png') }}" class="img-fluid rounded-circle text-center" style="height: 80px; width: 80px;" alt="..."></div>
+  <div class="card-body">
+    <h5 class="card-title fw-bold text-center">Save Lives</h5>
+    <p class="card-text text-center">One blood donation can help save multiple lives, Together, we save lives through blood donation.</p>
+  </div>
+</div>
+</div>
+
+<p class="text-center text-white bg-danger mt-5 pt-3 pb-3 mb-0" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);">© Blood Bridge. All rights reserved.</p>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

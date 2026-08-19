@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Find Donor Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        select:focus,input.form:focus {
+    border-color: rgb(247, 135, 135);
+    outline: none;
+    box-shadow: 0 0 4px rgb(247, 135, 135);
+}
+select, input.form{
+  border: 1px solid rgb(218, 214, 214);
+  width: 260px;
+  margin-top: 8px;
+  margin-right: 42px;
+}
+.container-fluid a{
+ margin-top: 15px;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg pt-0 pb-0 fixed-top bg-white">
+  <div class="container-fluid">
+    <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="logo" style="width: 180px; height: 60px; margin-top: 8px; padding-bottom: 8px; margin-left: 40px;">
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active fs-6 text-body-emphasis me-2" href="{{ url_for('home') }}">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active fs-6 text-body-emphasis me-2" href="{{ url_for('about') }}">About Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-body-emphasis fs-6 me-2" href="{{ url_for('mission') }}">Our Mission</a>
+  </li>
+  <li class="nav-item">
+    <p><a class="nav-link active  fs-6 border-2 border-bottom border-danger me-2 pb-0 text-danger" aria-current="page" href="user.html">Find Donor</a></p>  
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-body-emphasis fs-6 me-2" href="{{ url_for('request_blood') }}">Request Blood</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-body-emphasis fs-6 me-2" href="{{ url_for('donor') }}">Become Donor</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-body-emphasis fs-6 me-2" href="{{ url_for('contact') }}">Contact Us</a>
+  </li>
+</ul>
+  </div>
+</nav>
+<div class="position-relative" style="padding-top: 68px;">
+    <img src="{{ url_for('static', filename='Images/Find.png') }}" class="img-fluid w-100" style="height: 155vh;">
+
+    <div class="position-absolute translate-middle-y text-start text-danger" style="margin-left: 50px; top:330px">
+        <div class="d-flex">
+          <h1 class="display-4 fw-bold text-black">Find a</h1>
+          <h2 class="display-4 fw-bold text-Danger ms-3">Blood Donors</h2>
+        </div>
+        <p class="text-black mt-2" style="margin-left: 2px; max-width: 530px; text-align: justify; font-size: 18px;" >Quickly search for verified blood 
+            donors by blood group and location. Our platform connects patients with nearby donors.</p>
+            
+    </div>
+    <div class="position-absolute translate-middle-y text-start" style="margin-left: 50px; width: 202vh; top: 850px;">
+        <div class="me-5 mt-4 pt-4 pb-4 rounded ps-5 pe-5" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); background-color: white;">
+            <p class="fw-bold fs-4">Search for Donors</p>
+            <form action="{{ url_for('find_donor') }}" method="POST">
+            <table>
+                <tr>
+                    <td>Blood Group</td>
+                    <td>State</td>
+                    <td>City</td>
+                    <td>PIN Code</td>
+                </tr>
+                <tr>
+                    <td><select class="form p-2 rounded" aria-label="Blood group" id="bloodgroup" name="bloodgroup">
+              <option value="" selected>Select your Blood Group</option>
+              <option value="O-">O-</option>
+              <option value="O+">O+</option>
+              <option value="B-">B-</option>
+              <option value="B+">B+</option>
+              <option value="A-">A-</option>
+              <option value="A+">A+</option>
+              <option value="AB-">AB-</option>
+              <option value="AB+">AB+</option>
+            </select></td>
+                    <td><select class="form p-2 rounded" aria-label="State" id="state" name="state">
+              <option value="" selected >Select your State</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    <option value="Chhattisgarh">Chhattisgarh</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarat">Gujarat</option>
+    <option value="Haryana">Haryana</option>
+    <option value="Himachal Pradesh">Himachal Pradesh</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nagaland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarakhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+            </select></td>
+                    <td><select class="form p-2 rounded" aria-label="City" id="city" name="city">
+    <option value="" selected>Select your City</option>
+    <option value="Ahmedabad">Ahmedabad</option>
+    <option value="Bengaluru">Bengaluru</option>
+    <option value="Bhavnagar">Bhavnagar</option>
+    <option value="Bhubaneswar">Bhubaneswar</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Coimbatore">Coimbatore</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Gandhinagar">Gandhinagar</option>
+    <option value="Hyderabad">Hyderabad</option>
+    <option value="Jaipur">Jaipur</option>
+    <option value="Jamnagar">Jamnagar</option>
+    <option value="Junagadh">Junagadh</option>
+    <option value="Kanpur">Kanpur</option>
+    <option value="Kolkata">Kolkata</option>
+    <option value="Lucknow">Lucknow</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Mysuru">Mysuru</option>
+    <option value="Nagpur">Nagpur</option>
+    <option value="Nashik">Nashik</option>
+    <option value="Patna">Patna</option>
+    <option value="Pune">Pune</option>
+    <option value="Rajkot">Rajkot</option>
+    <option value="Surat">Surat</option>
+    <option value="Vadodara">Vadodara</option>
+</select></td>
+                    <td><input type="text" maxlength="6" pattern="[0-9]{6}" class="form p-2 rounded" placeholder="Enter pincode" aria-label="Pin" id="pin" name="pin"></td>
+                    <td class="pt-2"><button type="submit" class="btn btn-danger ps-3 pe-3" style="height: 40px;"><i class="bi bi-search me-2"></i>Search</button></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+<h3 class="text-center text-danger fw-bold mt-4">Available Donors</h3>
+{% if donors %}
+<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+<div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); background-color: white; width: 365px; border-radius: 10px;" class="ps-4 pt-3 mt-3 pe-4">
+  {% for donor in donors %}
+  <div style="display: flex; flex-direction: row;">
+    <div class="box bg-danger text-white rounded-circle fw-bold" style="height: 47px; width: 47px; font-size: 22px; display: flex; justify-content: center; align-items: center;">{{ donor[2] }}</div>
+    <div class="fs-4 mt-1 fw-bold ms-4">{{ donor[1] }}</div>
+  </div>
+  <div class="mt-2" style="margin-left: 72px;">
+    <p><label class="fw-bold me-2">State :</label>{{ donor[4] }}</p>
+    <p><label class="fw-bold me-2">City :</label>{{ donor[5] }}</p>
+    <p><label class="fw-bold me-2">Pin :</label>{{ donor[6] }}</p>
+    <p><label class="fw-bold me-2">Last Donation Date :</label>{{ donor[7] }}</p>
+  </div>
+  <a href="{{ url_for('donor_profile', id=donor[0]) }}" style="width: 550px;"><button type="button" class="btn btn-danger" style="padding-left: 79px; padding-right: 79px;"><i class="bi bi-box-arrow-in-right me-2"></i>View Donor Profile</button></a></br>
+  <a href="{{ url_for('request_blood') }}" style="text-decoration: none;"><button type="button" class="btn bg-white border-danger text-danger mt-2 mb-4" style="padding-left: 92px; padding-right: 92px;"><i class="bi bi-megaphone me-2"></i>Create Request</button></a>
+  {% endfor %}
+  {% else %}
+<p class="bg-white mt-4 ps-4 pt-2 pb-2 me-5" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); background-color: white; border-radius: 5px; width: 195.5vh;">No donors found.</p>
+{% endif %}
+</div>
+</div>
+    </div>
+</div>
+<p class="text-center text-white bg-danger pt-3 pb-3 mb-0" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);">© Blood Bridge. All rights reserved.</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

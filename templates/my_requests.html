@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Requests</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+      textarea:focus,select:focus,input.form:focus {
+    border-color: rgb(247, 135, 135);
+    outline: none;
+    box-shadow: 0 0 4px rgb(247, 135, 135);
+}
+textarea, select, input.form{
+  border: 1px solid rgb(218, 214, 214);
+  margin-bottom: 17px;
+  width: 300px;
+}
+input[type="checkbox"]:focus{
+  border-color: rgb(247, 135, 135);
+    outline: none;
+    box-shadow: 0 0 4px rgb(247, 135, 135);
+}
+input[type="radio"]:focus{
+  border-color: rgb(247, 135, 135);
+    outline: none;
+    box-shadow: 0 0 4px rgb(247, 135, 135);
+}
+label{
+    width: 200px;
+}
+.container-fluid a{
+ margin-top: 15px;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg pt-0 pb-0 fixed-top bg-white">
+  <div class="container-fluid">
+    <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="logo" style="width: 180px; height: 60px; margin-top: 8px; padding-bottom: 8px; margin-left: 40px; background: transparent;">
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <p><a href="{{ url_for('request_blood') }}" class="nav-link fs-6 border border-2 border-danger me-4 rounded bg-danger text-white" style="height: 40px; padding-top: 6px;  margin-top: 15px;">Back</a></p>
+  </li>
+</ul>
+  </div>
+</nav>
+<div class="bg-white" style="height: 92.3vh; display: flex; flex-direction: column; padding-top: 50px;">
+    <h2 class="text-center fw-bold text-danger" style="margin-top: 35px;">Blood Requests</h2>
+        <table class="table table-bordered table-hover text-center mt-4" style="width: 197vh; margin-left: 60px;">
+    <thead class="table-danger">
+       <tr>
+
+<th>ID</th>
+<th>Patient</th>
+<th>Blood Group</th>
+<th>Units</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Contact</th>
+<th>Email</th>
+<th>Hospital</th>
+<th>Address</th>
+<th>City</th>
+<th>Required Date</th>
+<th>Emergency</th>
+<th>Action</th>
+</tr>
+    </thead>
+    <tbody>
+
+{% for request in requests %}
+
+<tr>
+
+<td>{{ request[0] }}</td>
+<td>{{ request[1] }}</td>
+<td>{{ request[2] }}</td>
+<td>{{ request[3] }}</td>
+<td>{{ request[4] }}</td>
+<td>{{ request[5] }}</td>
+<td>{{ request[6] }}</td>
+<td>{{ request[7] }}</td>
+<td>{{ request[8] }}</td>
+<td>{{ request[9] }}</td>
+<td>{{ request[10] }}</td>
+<td>{{ request[11] }}</td>
+
+<td>
+
+{% if request[12]=="Yes" %}
+<span class="badge bg-danger p-2">Emergency</span>
+{% else %}
+<span class="badge bg-success p-2">Normal</span>
+{% endif %}
+
+</td>
+
+<td>
+
+<a href="{{ url_for('delete_request', id=request[0]) }}"
+class="btn btn-danger btn-sm"
+onclick="return confirm('Are you sure you want to delete this request?')"><i class="bi bi-trash-fill"></i>
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+</table>
+
+</div>
+<p class="text-center text-white bg-danger pt-3 pb-3 mb-0" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);">© Blood Bridge. All rights reserved.</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

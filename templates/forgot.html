@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="{{ url_for('static', filename='js/forgot.js') }}"></script>
+    <style>
+      select:focus,input.form:focus {
+    border-color: rgb(247, 135, 135);
+    outline: none;
+    box-shadow: 0 0 4px rgb(247, 135, 135);
+}
+select, input.form{
+  border: 1px solid rgb(218, 214, 214);
+  margin-left: 35px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+input[type="checkbox"]:focus{
+  border-color: rgb(247, 135, 135);
+    outline: none;
+    box-shadow: 0 0 4px rgb(247, 135, 135);
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg pt-0 pb-0 fixed-top bg-white">
+  <div class="container-fluid">
+    <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="logo" style="width: 180px; height: 60px; margin-top: 8px; padding-bottom: 8px; margin-left: 40px;">
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <button type="button" class="btn btn-danger me-5"><a class="nav-link active fs-6 text-white p-0 ps-1 pe-1" href="{{ url_for('login') }}">Back</a></button>
+  </li>
+</ul>
+  </div>
+</nav>
+<div class="bg-white" style="height: 92.3vh; display: flex; flex-direction:column ; justify-content: center; align-items: center;">
+         <h2 class="text-center fw-bold pt-4 text-danger">Reset Password</h2>
+<div class="ms-5 me-5 mt-5 pt-4 pb-4 rounded" style="box-shadow: 0 0 15px rgba(57, 24, 24, 0.3); width: 600px; background-color: white;">
+  <form action="{{ url_for('forgot_password') }}" method="POST" onsubmit="return validateForm()" class="text-center">
+    <table style="text-align: justify; margin-left: 59px;" class="me-5">
+      <tr>
+        <td><label for="email" class="form-label fw-bold">Email Address :</label></td>
+        <td><input type="email" class="form p-2 rounded" id="email" name="email" aria-label="Email address" placeholder="Enter your email address"></td>
+      </tr>
+      <tr>
+        <td><label for="password" class="form-label fw-bold">New Password :</label></td>
+        <td><input type="password" id="password" name="password" class="form p-2 rounded" aria-label="Password" placeholder="Create a password"></td>
+      </tr>
+      <tr>
+        <td><label for="confirmpassword" class="form-label fw-bold">Confirm Password :</label></td>
+        <td><input type="password" id="confirmpassword" name="confirmpassword" class="form p-2 rounded" aria-label="Confirm Password" placeholder="Confirm a password"></td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-danger ms-0" style="margin-top: 8px; width: 485px;"><i class="bi bi-lock-fill me-3"></i>Change Password</button>
+  </form>
+</div>
+</div>
+<p class="text-center text-white bg-danger pt-3 pb-3 mb-0" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);">© Blood Bridge. All rights reserved.</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
